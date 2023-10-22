@@ -61,10 +61,12 @@ while j < 20:
         except:
           print('No messages')
           try:
+             time.sleep(5)
              driver.find_element(By.XPATH,"//div[@aria-label='Messaging']").is_displayed()
-             message=driver.find_element(By.CLASS_NAME,"msg-overlay-bubble-header__badge-container").click()
+             print('is being displayed')
+             closebtn=driver.find_element(By.XPATH,"//li-icon[@type='close']").click()
           except:
-              print('Awesome')
+             print('Awesome')
   time.sleep(10)
   driver.execute_script("window.scrollBy(0,1000)","")
   time.sleep(5)
